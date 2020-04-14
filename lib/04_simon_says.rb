@@ -6,12 +6,18 @@ def shout(a)
 	return "#{a.upcase}"
 end
 
-def repeat(a,nb_fois)
-	 return Array.new(nb_fois, a).join(' ')
+def repeat(a,*nb)
+	b = nb.length * 3
+	if b==0
+		return "#{a} #{a}"
+	end
+	
+	 return Array.new(b, a).join(' ')
+	
 end
 
-def start_of_word(a,nb_fois)
-	return a[0..nb_fois-1]
+def start_of_word(a,nb)
+	return a[0..nb-1]
 end
 
 def first_word(a)
